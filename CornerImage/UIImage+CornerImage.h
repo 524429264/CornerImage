@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (CornerImage)
-- (UIImage *)roundedCornerImageWithCornerRadius:(CGFloat)cornerRadius;
+- (UIImage *)roundedCornerImageWithCornerRadius:(CGFloat)radius;
+
+- (UIImage*)imageByRoundCornerRadius:(CGFloat)radius;
+
 
 @end

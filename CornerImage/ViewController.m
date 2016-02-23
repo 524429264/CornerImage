@@ -17,8 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-   
-    
+  
     [self test1];
     
     [self test2];
@@ -30,18 +29,20 @@
 {
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(30, 20, 300, 200)];
     UIImage *image = [UIImage imageNamed:@"1.jpg"];
-    image = [image roundedCornerImageWithCornerRadius:50];
-    imageView.image = image;
-    
+   
+    imageView.image =  [image imageByRoundCornerRadius:200];
+  
     [self.view addSubview:imageView];
+
 }
 
 - (void)test2
 {
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(30, 240, 300, 200)];
     UIImage *image = [UIImage imageNamed:@"1.jpg"];
-    image = [image roundedCornerImageWithCornerRadius:100];
     imageView.image = image;
+    imageView.layer.cornerRadius = 100;
+    imageView.layer.masksToBounds = YES;
     
     [self.view addSubview:imageView];
 }
@@ -50,7 +51,7 @@
 {
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(30, 460, 300, 200)];
     UIImage *image = [UIImage imageNamed:@"1.jpg"];
-    image = [image roundedCornerImageWithCornerRadius:300];
+    image = [image roundedCornerImageWithCornerRadius:image.size.height/2.0];
     imageView.image = image;
     
     [self.view addSubview:imageView];
